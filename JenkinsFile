@@ -1,0 +1,21 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Checkout') {
+            steps {
+                git 'https://github.com/nikutayade76-maker/myprofile.git'
+            }
+        }
+         stage('Build') {
+            steps {
+                echo 'javac Hello.java'
+            }
+        }
+        stage('Execute') {
+            steps {
+                echo 'java Hello'
+            }
+        }
+    }
+}
